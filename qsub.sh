@@ -14,6 +14,7 @@ cd $PBS_O_WORKDIR
 source ~/.bashrc
 eval "$(conda shell.bash hook)"
 conda activate data
+cd ./src
 ifort data_assim.f90 -o data_assim -L$MKLROOT/lib/intel64_lin -lmkl_rt -mkl
 ifort make_restart.f90 -o make_restart
 
